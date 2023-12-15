@@ -8,6 +8,7 @@ from langchain.prompts import (
     SystemMessagePromptTemplate,
 )
 
+## TODO: Make sure to update the example_user_config.py file and save it as user_config
 import user_config
 
 #An Alternative Way to handle this would be to use

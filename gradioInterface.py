@@ -13,7 +13,7 @@ import langchainBasic
 demo = gr.Blocks()
 demo.queue()
 
-response_location = "12daysofAI/apersonality/"
+response_location = "apersonality/"
 global current_personality
 global personalities_encountered
 current_personality = None
