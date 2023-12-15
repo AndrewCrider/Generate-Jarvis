@@ -10,15 +10,14 @@ import elevenLabsGeneration
 import apersonality.personalities as personas
 import langchainBasic
 
-demo = gr.Blocks()
-demo.queue()
-
-response_location = "apersonality/"
+response_location = "Generate-Jarvis/apersonality"
 global current_personality
 global personalities_encountered
 current_personality = None
 personalities_encountered = []
 
+demo = gr.Blocks()
+demo.queue()
 def gradioApp():  
        
     with gr.Blocks() as demo:
@@ -45,7 +44,7 @@ def gradioApp():
                 selected_personality = personality_determiner.determine_personalities()
                 personality_name = selected_personality['personality']
                 
-                
+                ## Add the Personality System Prompt
                 history_langchain_format.append(SystemMessage(content=selected_personality['prompt']))
                 for human, ai in chat_history:
                     history_langchain_format.append(HumanMessage(content=human))
